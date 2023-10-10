@@ -1,3 +1,4 @@
+// import cities from '../data/tr-wo-neighboorhood.json';
 import {cities} from '../data/cities.json';
 import fs from 'fs';
 import path from 'path';
@@ -5,6 +6,7 @@ import 'dotenv/config';
 
 (async () => {
 	const apiKey = process.env.OPEN_WEATHER_API_KEY;
+	console.log(apiKey);
 	const allCities = cities.map((city) => {
 		const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&units=metric&appid=${apiKey}`;
 		return fetch(weatherApiUrl);
