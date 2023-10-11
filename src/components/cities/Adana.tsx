@@ -4,8 +4,8 @@ export const Adana = () => {
 	return (
 		<AbsoluteFill
 			style={{
-				justifyContent: 'center',
-				alignItems: 'center',
+				justifyContent: 'flex-start',
+				alignItems: 'flex-start',
 			}}
 		>
 			<svg
@@ -13,7 +13,7 @@ export const Adana = () => {
 				id="svg-turkiye-haritasi"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 1007.478 527.323"
-				style={{transform: `scale(8) translateY(-80px) translateX(-5px)`}}
+				style={{transform: `scale(8)`}}
 			>
 				<g
 					id="adana"

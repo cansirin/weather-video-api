@@ -45,6 +45,7 @@ export const Title: React.FC<{
 						key={t}
 						style={{
 							...word,
+							fontFamily: 'fantasy',
 							color: titleColor,
 							transform: `scale(${scale})`,
 						}}

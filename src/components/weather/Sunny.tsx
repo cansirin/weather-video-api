@@ -6,7 +6,13 @@ import {
 	useVideoConfig,
 } from 'remotion';
 
-export const Sunny = ({celcius}: {celcius: number}) => {
+export const Sunny = ({
+	celcius,
+	scale: scaleMultiplier,
+}: {
+	celcius: number;
+	scale: number;
+}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const opacity = interpolate(frame, [0, 40], [0, 1]);
@@ -20,7 +26,7 @@ export const Sunny = ({celcius}: {celcius: number}) => {
 			style={{
 				justifyContent: 'center',
 				alignItems: 'center',
-				transform: `scale(${scale})`,
+				transform: `scale(${scale * scaleMultiplier})`,
 				opacity,
 			}}
 		>
@@ -48,7 +54,7 @@ export const Sunny = ({celcius}: {celcius: number}) => {
 			<p
 				style={{
 					fontSize: 28,
-					fontFamily: 'Helvetica',
+					fontFamily: 'fantasy',
 					color: '#ffd400',
 					padding: 0,
 					margin: 0,

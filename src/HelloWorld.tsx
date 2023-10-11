@@ -6,6 +6,7 @@ import {zColor} from '@remotion/zod-types';
 import React from 'react';
 import {Sunny} from './components/weather/Sunny';
 import {Adana} from './components/cities/Adana';
+import {BaseCity} from './components/cities/BaseCity';
 
 export const myCompSchema = z.object({
 	titleText: z.string(),
@@ -41,7 +42,6 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 
 	// Fade out the animation at the end
 
-	// A <AbsoluteFill> is just a absolutely positioned <div>!
 	return (
 		<AbsoluteFill style={{backgroundColor: 'wheat'}}>
 			<AbsoluteFill>
@@ -49,11 +49,13 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 				{/* <Sequence from={10}></Sequence> */}
 				{/* The subtitle will only enter on the 75th frame. */}
 				<Sequence>
-					<Adana />
+					<Title titleText="A D A N A" titleColor="#000" />
+					<BaseCity>
+						<Adana />
+					</BaseCity>
 				</Sequence>
 				<Sequence from={15}>
-					<Title titleText="ADANA" titleColor="#000" />
-					<Sunny celcius={30} />
+					<Sunny celcius={30} scale={2} />
 				</Sequence>
 			</AbsoluteFill>
 		</AbsoluteFill>
