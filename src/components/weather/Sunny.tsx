@@ -5,6 +5,7 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
+import {FONT_FAMILY} from '../../HelloWorld/constants';
 
 export const Sunny = ({
 	celcius,
@@ -26,7 +27,7 @@ export const Sunny = ({
 			style={{
 				justifyContent: 'center',
 				alignItems: 'center',
-				transform: `scale(${scale * scaleMultiplier})`,
+				transform: `scale(${scale * scaleMultiplier}) `,
 				opacity,
 			}}
 		>
@@ -54,7 +55,7 @@ export const Sunny = ({
 			<p
 				style={{
 					fontSize: 28,
-					fontFamily: 'fantasy',
+					fontFamily: FONT_FAMILY,
 					color: '#ffd400',
 					padding: 0,
 					margin: 0,

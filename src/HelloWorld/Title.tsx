@@ -6,9 +6,11 @@ const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
 	fontSize: 100,
+	margin: 0,
+	padding: 0,
 	textAlign: 'center',
 	position: 'absolute',
-	bottom: 160,
+	bottom: 350,
 	width: '100%',
 };
 
@@ -28,7 +30,7 @@ export const Title: React.FC<{
 	const words = titleText.split(' ');
 
 	return (
-		<h1 style={title}>
+		<p style={title}>
 			{words.map((t, i) => {
 				const delay = i * 5;
 
@@ -45,7 +47,7 @@ export const Title: React.FC<{
 						key={t}
 						style={{
 							...word,
-							fontFamily: 'fantasy',
+							fontFamily: FONT_FAMILY,
 							color: titleColor,
 							transform: `scale(${scale})`,
 						}}
@@ -54,6 +56,6 @@ export const Title: React.FC<{
 					</span>
 				);
 			})}
-		</h1>
+		</p>
 	);
 };
