@@ -1,12 +1,16 @@
 import {AbsoluteFill} from 'remotion';
 import {useTranslate} from '../utils';
 
-export const WeatherRow = ({rowNumber}: {rowNumber: number}) => {
-	const moveDown = useTranslate({
-		from: 70,
-		to: 71 * rowNumber,
-		startAtFrame: 40,
-	});
+interface MoveProps {
+	from: number;
+	to: number;
+	startAtFrame: number;
+}
+interface MoveableProps {
+	sequence: MoveProps[];
+}
+export const Moveable = (props: MoveableProps) => {
+	const sequence = props.sequence;
 	const scaleDown = useTranslate({from: 4, to: 4, startAtFrame: 40});
 
 	return (
