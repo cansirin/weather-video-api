@@ -6,7 +6,6 @@ import React from 'react';
 import {Sunny} from './components/weather/Sunny';
 import {Adana} from './components/cities/Adana';
 import {CityWithWeather} from './CityWithWeather';
-import {WeatherRow} from './components/WeatherRow';
 
 export const myCompSchema = z.object({
 	titleText: z.string(),
@@ -21,7 +20,7 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 	logoColor1,
 	logoColor2,
 }) => {
-	// const frame = useCurrentFrame();
+	// Const frame = useCurrentFrame();
 	// const {durationInFrames, fps} = useVideoConfig();
 
 	// Animate from 0 to 1 after 25 frames
@@ -43,25 +42,21 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 	// Fade out the animation at the end
 
 	return (
-		<AbsoluteFill
-			style={{
-				backgroundColor: 'wheat',
-			}}
-		>
+		<AbsoluteFill>
 			{/* Sequences can shift the time for its children! */}
 			{/* <Sequence from={10}></Sequence> */}
 			{/* The subtitle will only enter on the 75th frame. */}
-			<Sequence>
+			<Sequence layout="none">
 				<CityWithWeather
 					city={<Adana />}
-					weather={<Sunny celcius={30} scale={2} />}
+					weather={<Sunny celcius={30} scale={4} />}
 				/>
 			</Sequence>
-			<Sequence from={45}>
-				<WeatherRow rowNumber={1} />
-				<WeatherRow rowNumber={2} />
-				<WeatherRow rowNumber={3} />
-			</Sequence>
+			{/* <Sequence from={45}> */}
+			{/* 	<WeatherRow rowNumber={1} /> */}
+			{/* 	<WeatherRow rowNumber={2} /> */}
+			{/* 	<WeatherRow rowNumber={3} /> */}
+			{/* </Sequence> */}
 		</AbsoluteFill>
 	);
 };

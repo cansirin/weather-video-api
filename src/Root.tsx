@@ -1,6 +1,7 @@
 import {Composition} from 'remotion';
-import {HelloWorld, myCompSchema} from './HelloWorld';
+import {myCompSchema} from './HelloWorld';
 import {Logo, myCompSchema2} from './HelloWorld/Logo';
+import {RealVideo} from './RealVideo';
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -11,7 +12,7 @@ export const RemotionRoot: React.FC = () => {
 				// You can take the "id" to render a video:
 				// npx remotion render src/index.ts <id> out/video.mp4
 				id="HelloWorld"
-				component={HelloWorld}
+				component={RealVideo}
 				durationInFrames={150}
 				fps={30}
 				width={1080}

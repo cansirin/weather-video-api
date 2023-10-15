@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="9c240142-e9d8-437a-8a0a-3434c4575f02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WeatherRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherRow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CityWithWeather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CityWithWeather.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HelloWorld.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HelloWorld/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld/Title.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Moveable.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cities/Adana.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cities/Adana.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cities/BaseCity.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/weather/Sunny.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weather/Sunny.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,15 +78,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/cities/Adana.tsx</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -6,11 +6,7 @@ const title: React.CSSProperties = {
 	fontFamily: FONT_FAMILY,
 	fontWeight: 'bold',
 	fontSize: 100,
-	margin: 0,
-	padding: 0,
 	textAlign: 'center',
-	position: 'absolute',
-	bottom: 350,
 	width: '100%',
 };
 
