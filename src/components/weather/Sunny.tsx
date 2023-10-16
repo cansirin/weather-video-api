@@ -1,14 +1,7 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {FONT_FAMILY} from '../../HelloWorld/constants';
+import {useCurrentFrame} from 'remotion';
 
-export const Sunny = ({celcius}: {celcius: number}) => {
+export const Sunny = ({height, width}: {height: number; width: number}) => {
 	const frame = useCurrentFrame();
-	const {fps} = useVideoConfig();
-	const opacity = interpolate(frame, [0, 20], [0, 1]);
-	const scale = spring({
-		fps,
-		frame,
-	});
 
 	return (
 		<div
@@ -16,19 +9,16 @@ export const Sunny = ({celcius}: {celcius: number}) => {
 				display: 'flex',
 				flexDirection: 'column',
 				gap: 50,
-				justifyContent: 'center',
-				alignItems: 'center',
 			}}
 		>
 			<svg
-				width="256"
-				height="256"
+				width={width}
+				height={height}
 				viewBox="0 0 128 128"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 				style={{
 					rotate: `${frame / 2}deg`,
-					opacity,
 				}}
 			>
 				<path
@@ -42,18 +32,6 @@ export const Sunny = ({celcius}: {celcius: number}) => {
 					fill="#FFD400"
 				/>
 			</svg>
-			<p
-				style={{
-					fontSize: 72,
-					fontFamily: FONT_FAMILY,
-					color: '#ffd400',
-					padding: 0,
-					margin: 0,
-					transform: `scale(${scale})`,
-				}}
-			>
-				{celcius} derece
-			</p>
 		</div>
 	);
 };

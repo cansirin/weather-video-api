@@ -8,7 +8,15 @@ export const WeatherInfo = () => {
 
 	const component =
 		frame > gecis ? (
-			<div style={{display: 'flex', flexDirection: 'column', gap: 100}}>
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					gap: 100,
+					position: 'absolute',
+					transform: 'translateY(60px)',
+				}}
+			>
 				<WeatherRow rowNumber={1} />
 				<WeatherRow rowNumber={2} />
 				<WeatherRow rowNumber={3} />
@@ -28,6 +36,7 @@ export const WeatherInfo = () => {
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
+						gap: 40,
 					}}
 				>
 					<Img
@@ -36,14 +45,30 @@ export const WeatherInfo = () => {
 						width="180px"
 						height="auto"
 					/>
-					<p style={{fontSize: 64}}>16km/hr</p>
-					<p style={{fontSize: 60, color: '#fff'}}>Rüzgar</p>
+					<p
+						style={{
+							fontSize: 64,
+						}}
+					>
+						16km/hr
+					</p>
+					<p
+						style={{
+							fontSize: 48,
+							color: '#fff',
+							textDecoration: 'underline',
+							textUnderlineOffset: 4,
+						}}
+					>
+						Rüzgar
+					</p>
 				</div>
 				<div
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
+						gap: 40,
 					}}
 				>
 					<Img
@@ -53,13 +78,23 @@ export const WeatherInfo = () => {
 						height="auto"
 					/>
 					<p style={{fontSize: 64}}>29%</p>
-					<p style={{fontSize: 60, color: '#fff'}}>Nem</p>
+					<p
+						style={{
+							fontSize: 48,
+							color: '#fff',
+							textDecoration: 'underline',
+							textUnderlineOffset: 4,
+						}}
+					>
+						Nem
+					</p>
 				</div>
 				<div
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
 						alignItems: 'center',
+						gap: 40,
 					}}
 				>
 					<Img
@@ -68,8 +103,17 @@ export const WeatherInfo = () => {
 						width="180px"
 						height="auto"
 					/>
-					<p style={{fontSize: 64}}>48%</p>
-					<p style={{fontSize: 60, color: '#fff'}}>Yağış</p>
+					<p style={{fontSize: 64}}> 48%</p>
+					<p
+						style={{
+							fontSize: 48,
+							color: '#fff',
+							textDecoration: 'underline',
+							textUnderlineOffset: 4,
+						}}
+					>
+						Yağış
+					</p>
 				</div>
 			</div>
 		);

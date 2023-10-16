@@ -6,14 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9c240142-e9d8-437a-8a0a-3434c4575f02" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelloWorld.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HelloWorld/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld/Title.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RealVideo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/RealVideo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/getWeatherData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getWeatherData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WeatherRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cities/Adana.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cities/Adana.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/weather/Sunny.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weather/Sunny.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/weather.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/weather.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/default.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/default.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +33,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2WV1xxmjnPc0vNVS6ntiqx7JhlT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="false" />
@@ -48,9 +53,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/cansirin/Desktop/development/weather-api-video/node_modules/prettier",
+    "prettierjs.PrettierConfiguration.Package": "/Users/csirin/Desktop/development/weather-video-api/node_modules/prettier",
     "settings.editor.selected.configurable": "actions.on.save",
-    "ts.external.directory.path": "/Users/cansirin/Desktop/development/weather-api-video/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/csirin/Desktop/development/weather-video-api/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -71,6 +76,7 @@
       <workItem from="1696805309471" duration="5330000" />
       <workItem from="1696879339798" duration="8631000" />
       <workItem from="1696889442641" duration="538000" />
+      <workItem from="1697429265158" duration="14059000" />
     </task>
     <servers />
   </component>

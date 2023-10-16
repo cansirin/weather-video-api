@@ -13,14 +13,15 @@ export const RemotionRoot: React.FC = () => {
 				// npx remotion render src/index.ts <id> out/video.mp4
 				id="HelloWorld"
 				component={RealVideo}
-				durationInFrames={150}
-				fps={30}
+				durationInFrames={360}
+				fps={60}
 				width={1080}
 				height={1920}
 				// You can override these props for each render:
 				// https://www.remotion.dev/docs/parametrized-rendering
 				schema={myCompSchema}
 				defaultProps={{
+					cityName: 'Adana',
 					titleText: 'Welcome to Remotion',
 					titleColor: '#000000',
 					logoColor1: '#91EAE4',

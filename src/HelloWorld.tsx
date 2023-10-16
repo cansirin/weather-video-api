@@ -9,6 +9,7 @@ export const myCompSchema = z.object({
 	titleColor: zColor(),
 	logoColor1: zColor(),
 	logoColor2: zColor(),
+	cityName: z.string(),
 });
 
 export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
