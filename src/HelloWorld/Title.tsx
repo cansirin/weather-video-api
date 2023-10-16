@@ -8,6 +8,8 @@ const title: React.CSSProperties = {
 	fontSize: 100,
 	textAlign: 'center',
 	width: '100%',
+	margin: 0,
+	padding: 0,
 };
 
 const word: React.CSSProperties = {

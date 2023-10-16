@@ -1,39 +1,23 @@
-import {AbsoluteFill} from 'remotion';
-import {useTranslate} from '../utils';
-
 export const WeatherRow = ({rowNumber}: {rowNumber: number}) => {
-	const moveDown = useTranslate({
-		from: 70,
-		to: 71 * rowNumber,
-		startAtFrame: 40,
-	});
-	const scaleDown = useTranslate({from: 4, to: 4, startAtFrame: 40});
-
 	return (
-		<AbsoluteFill
+		<div
 			style={{
-				justifyContent: 'center',
+				height: 'auto',
+				width: '1080px',
+				display: 'flex',
 				alignItems: 'center',
-				transform: `scale(${scaleDown})
-				 translateY(${moveDown}px)`,
+				justifyContent: 'space-around',
+				borderRadius: '10px',
+				fontSize: '20px',
+				fontWeight: 'bold',
+				color: 'white',
 			}}
 		>
-			<div
-				style={{
-					padding: '6px',
-					backgroundColor: 'skyblue',
-					display: 'flex',
-					alignItems: 'center',
-					gap: '10px',
-					borderRadius: '10px',
-					fontSize: '20px',
-					fontWeight: 'bold',
-					color: 'white',
-				}}
-			>
+			<p style={{fontSize: 60, lineHeight: 1}}>Mon</p>
+			<div style={{display: 'flex', alignItems: 'center', gap: 20}}>
 				<svg
-					width="48"
-					height="48"
+					width="120"
+					height="120"
 					viewBox="0 0 128 128"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +33,9 @@ export const WeatherRow = ({rowNumber}: {rowNumber: number}) => {
 						fill="#FFD400"
 					/>
 				</svg>
-				Cok derece
+				<p style={{fontSize: 60, lineHeight: 1}}>Sunny</p>
 			</div>
-		</AbsoluteFill>
+			<p style={{fontSize: 60, lineHeight: 1}}>30° C</p>
+		</div>
 	);
 };

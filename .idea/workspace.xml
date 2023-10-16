@@ -8,15 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CityWithWeather.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/CityWithWeather.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelloWorld.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/HelloWorld/Title.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/HelloWorld/Title.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Moveable.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RealVideo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/RealVideo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/cities/Adana.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cities/Adana.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cities/BaseCity.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/weather/Sunny.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/weather/Sunny.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

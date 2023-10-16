@@ -3,9 +3,6 @@ import {z} from 'zod';
 
 import {zColor} from '@remotion/zod-types';
 import React from 'react';
-import {Sunny} from './components/weather/Sunny';
-import {Adana} from './components/cities/Adana';
-import {CityWithWeather} from './CityWithWeather';
 
 export const myCompSchema = z.object({
 	titleText: z.string(),
@@ -47,10 +44,10 @@ export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
 			{/* <Sequence from={10}></Sequence> */}
 			{/* The subtitle will only enter on the 75th frame. */}
 			<Sequence layout="none">
-				<CityWithWeather
-					city={<Adana />}
-					weather={<Sunny celcius={30} scale={4} />}
-				/>
+				{/* <CityWithWeather */}
+				{/* 	city={<Adana />} */}
+				{/* 	weather={<Sunny celcius={30} scale={4} />} */}
+				{/* /> */}
 			</Sequence>
 			{/* <Sequence from={45}> */}
 			{/* 	<WeatherRow rowNumber={1} /> */}
