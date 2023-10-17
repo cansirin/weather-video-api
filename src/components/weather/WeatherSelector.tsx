@@ -1,4 +1,4 @@
 interface WeatherSelectorProps {}
 export const WeatherSelector = () => {
-	return <div></div>;
+  return <div></div>;
 };
