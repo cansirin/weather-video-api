@@ -55,7 +55,7 @@ export const RealVideo = (props: RealVideoProps) => {
 						<WeatherMetadata cityName={cityName} currentDate={currentDate} />
 
 						<Sunny width={400} height={400} />
-						<WeatherStatus temperature={31} description={'parcali seks'} />
+						<WeatherStatus temperature={31} description={'Parcali Bulutlu'} />
 						<Animated
 							animations={[
 								Fade({to: 0, start: 30, duration: 30}),
