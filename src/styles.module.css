@@ -1,80 +1,84 @@
 /* src/styles.module.css */
 
 body {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .background {
-    background: rgb(34, 193, 195);
-    background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+  background: rgb(122, 149, 170);
+  background: linear-gradient(
+    180deg,
+    rgba(122, 149, 170, 1) 0%,
+    rgba(9, 7, 7, 1) 100%
+  );
 }
 
 .WeatherData {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .WeatherMetadata {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    line-height: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  line-height: 2;
 }
 
 .WeatherRowsWrapper {
-    position: absolute;
-    /*top: 10.35rem;*/
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  /*top: 10.35rem;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
 }
 
 .WeatherRowsTitle {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0 0 0.25rem;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 0 0.25rem;
 }
 
 .WeatherRowsSubtitle {
-    margin: 0;
-    padding: 0 0 1rem;
-    opacity: 0.4;
+  margin: 0;
+  padding: 0 0 1rem;
+  opacity: 0.4;
 }
 
 .WeatherRowItems {
-    display: grid;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .WeatherRowItem {
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    gap: 1rem;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .WeatherRowBadge {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 0.25rem;
-    background-color: #ebedf0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 0 0.125rem rgba(27, 31, 35, 0.1);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  background-color: #ebedf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 0.125rem rgba(27, 31, 35, 0.1);
 }
 
 .WeatherRowWeekday {
-    font-size: 1rem;
+  font-size: 1rem;
 }
