@@ -6,6 +6,8 @@ import './default.module.css';
 import {WeatherInfo} from './components/WeatherInfo';
 import {Sunny} from './components/weather/Sunny';
 import {WeatherSelector} from './components/weather/WeatherSelector';
+import WeatherMetadata from './WeatherMetadata';
+import {WeatherData as WeatherStatus} from './WeatherData';
 
 interface RealVideoProps {
 	cityName?: string;
@@ -13,7 +15,10 @@ interface RealVideoProps {
 
 export const RealVideo = (props: RealVideoProps) => {
 	console.log(WeatherData);
-	const {cityName} = props;
+	const cityName = props.cityName;
+
+	const currentDate = new Date();
+	currentDate.setDate(currentDate.getDate() + 1);
 	return (
 		<>
 			<AbsoluteFill className={styles.background} />
@@ -37,18 +42,20 @@ export const RealVideo = (props: RealVideoProps) => {
 							paddingTop: '60px',
 						}}
 					>
-						<div className={styles.WeatherMetadata}>
-							<span style={{fontSize: 96}}>Mutlu Pazartesiler!</span>
-							<span style={{fontSize: 54}}>15 Ekim 2023</span>
-							<Animated animations={[Scale({by: 1.8, initial: 1, start: 21})]}>
-								<span style={{fontSize: 96, lineHeight: 1.7}}>{cityName}</span>
-							</Animated>
-						</div>
+						{/* -WeatherMetadata adinda bir component yarat
+ -proplari gun  ismi tarih Sehir ismi cityName olsun
+ -WeatherData diye bir component yarat 
+ -proplari C derece ve WeatherStatus
+ 
+ 
+ 
+ 
+ */}
+
+						<WeatherMetadata cityName={cityName} currentDate={currentDate} />
+
 						<Sunny width={400} height={400} />
-						<div className={styles.WeatherData}>
-							<p style={{fontSize: 180}}>30° C</p>
-							<p style={{fontSize: 80}}>Parcali Bulutlu</p>
-						</div>
+						<WeatherStatus temperature={31} description={'parcali seks'} />
 						<Animated
 							animations={[
 								Fade({to: 0, start: 30, duration: 30}),

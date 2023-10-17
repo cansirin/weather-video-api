@@ -46,7 +46,7 @@ export const WeatherRow = ({rowNumber}: {rowNumber: number}) => {
 				</svg>
 				<p style={{fontSize: 60, lineHeight: 1}}>Sunny</p>
 			</div>
-			<p style={{fontSize: 60, lineHeight: 1}}>30° C</p>
+			<p style={{fontSize: 60, lineHeight: 1}}>35° C</p>
 		</AbsoluteFill>
 	);
 };

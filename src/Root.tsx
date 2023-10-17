@@ -21,7 +21,7 @@ export const RemotionRoot: React.FC = () => {
 				// https://www.remotion.dev/docs/parametrized-rendering
 				schema={myCompSchema}
 				defaultProps={{
-					cityName: 'Adana',
+					cityName: 'denizli',
 					titleText: 'Welcome to Remotion',
 					titleColor: '#000000',
 					logoColor1: '#91EAE4',
