@@ -1,5 +1,5 @@
 import {AbsoluteFill} from 'remotion';
-import {Animated, Fade, Move, Scale} from 'remotion-animated';
+import {Animated, Fade, Move} from 'remotion-animated';
 import WeatherData from './data/weather.json';
 import styles from './styles.module.css';
 import './default.module.css';
@@ -11,18 +11,66 @@ import {WeatherData as WeatherStatus} from './WeatherData';
 
 interface RealVideoProps {
   cityName?: string;
+  choseTime?: string;
+  choseDate?: string;
 }
 
-export const RealVideo = (props: RealVideoProps) => {
-  console.log(WeatherData);
-  const cityName = props.cityName;
+const getCityWeatherData = (cityName: string) => {
+  const cityWeatherData = WeatherData.find((item) => item[cityName]);
+  return cityWeatherData ? cityWeatherData[cityName] : [];
+};
 
+const getCurrentWeather = (cityWeatherData: any[]) => {
+  const currentHour = new Date().getHours();
+
+  if (currentHour >= 9 && currentHour < 18) {
+    const weather = cityWeatherData.find((entry) => {
+      const dt = new Date(entry.dt * 1000);
+      return dt.getHours() === 9;
+    });
+    return weather;
+  } else if (currentHour >= 18) {
+    const weather = cityWeatherData.find((entry) => {
+      const dt = new Date(entry.dt * 1000);
+      return dt.getHours() === 18;
+    });
+    return weather;
+  } else {
+    const nearestWeather = cityWeatherData.reduce((prev, curr) => {
+      const prevDt = new Date(prev.dt * 1000);
+      const currDt = new Date(curr.dt * 1000);
+      return Math.abs(currDt - new Date()) < Math.abs(prevDt - new Date())
+        ? curr
+        : prev;
+    });
+    return nearestWeather;
+  }
+};
+
+export const RealVideo = (props: RealVideoProps) => {
+  const {cityName} = props;
+
+  if (!cityName) {
+    console.error('cityName parametresi gereklidir.');
+    return null;
+  }
+
+  const cityWeatherData = getCityWeatherData(cityName);
+
+  if (!cityWeatherData || cityWeatherData.length === 0) {
+    console.error(
+      `Belirtilen şehir için hava durumu verisi bulunamadı: ${cityName}`
+    );
+    return null;
+  }
+
+  const currentWeather = getCurrentWeather(cityWeatherData);
   const currentDate = new Date();
-  currentDate.setDate(currentDate.getDate() + 1);
+  currentDate.setDate(currentDate.getDate() + 0);
+
   return (
     <>
       <AbsoluteFill className={styles.background} />
-      {/* <AbsoluteFill className={styles.WeatherRowsWrapper}> */}
       <AbsoluteFill>
         <WeatherSelector />
         <Animated
@@ -42,20 +90,12 @@ export const RealVideo = (props: RealVideoProps) => {
               paddingTop: '60px',
             }}
           >
-            {/* -WeatherMetadata adinda bir component yarat
- -proplari gun  ismi tarih Sehir ismi cityName olsun
- -WeatherData diye bir component yarat 
- -proplari C derece ve WeatherStatus
- 
- 
- 
- 
- */}
-
             <WeatherMetadata cityName={cityName} currentDate={currentDate} />
-
             <Sunny width={400} height={400} />
-            <WeatherStatus temperature={31} description={'Parcali Bulutlu'} />
+            <WeatherStatus
+              temperature={currentWeather.main.temp}
+              description={currentWeather.weather[0].description}
+            />
             <Animated
               animations={[
                 Fade({to: 0, start: 30, duration: 30}),
