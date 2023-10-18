@@ -10,6 +10,8 @@ export const myCompSchema = z.object({
   logoColor1: zColor(),
   logoColor2: zColor(),
   cityName: z.string(),
+  choseTime: z.string(),
+  choseDate: z.string(),
 });
 
 export const HelloWorld: React.FC<z.infer<typeof myCompSchema>> = ({
