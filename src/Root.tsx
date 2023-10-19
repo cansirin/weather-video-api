@@ -1,7 +1,6 @@
 import {Composition} from 'remotion';
-import {myCompSchema} from './HelloWorld';
 import {Logo, myCompSchema2} from './HelloWorld/Logo';
-import {RealVideo} from './RealVideo';
+import {RealVideo, myCompSchema} from './RealVideo';
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -11,7 +10,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         // You can take the "id" to render a video:
         // npx remotion render src/index.ts <id> out/video.mp4
-        id="HelloWorld"
+        id="HavaDurumu"
         component={RealVideo}
         durationInFrames={360}
         fps={60}
@@ -22,12 +21,8 @@ export const RemotionRoot: React.FC = () => {
         schema={myCompSchema}
         defaultProps={{
           cityName: 'Bayburt',
-          choseTime: '18:00-09:00',
-          choseDate: '2023-10-23',
-          titleText: 'Welcome to Remotion',
-          titleColor: '#000000',
-          logoColor1: '#91EAE4',
-          logoColor2: '#86A8E7',
+          chosenTime: '09',
+          chosenDate: '2023-10-18',
         }}
       />
       {/* Mount any React component to make it show up in the sidebar and work on it individually! */}

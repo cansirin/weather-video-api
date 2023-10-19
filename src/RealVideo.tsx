@@ -1,3 +1,4 @@
+import {z} from 'zod';
 import {AbsoluteFill} from 'remotion';
 import {Animated, Fade, Move} from 'remotion-animated';
 import WeatherData from './data/weather.json';
@@ -10,63 +11,54 @@ import WeatherMetadata from './WeatherMetadata';
 import {WeatherData as WeatherStatus} from './WeatherData';
 
 interface RealVideoProps {
-  cityName?: string;
-  choseTime?: string;
-  choseDate?: string;
+  cityName: string;
+  chosenTime: string;
+  chosenDate: string;
 }
 
-const getCityWeatherData = (cityName: string) => {
-  const cityWeatherData = WeatherData.find((item) => item[cityName]);
-  return cityWeatherData ? cityWeatherData[cityName] : [];
-};
+export const myCompSchema = z.object({
+  cityName: z.string(),
+  chosenTime: z.string(),
+  chosenDate: z.string(),
+});
 
-const getCurrentWeather = (cityWeatherData: any[]) => {
-  const currentHour = new Date().getHours();
+const getCurrentWeather = (
+  cityName: string,
+  // TODO: add weather interface
+  cityWeatherData: any[],
+  date: string,
+  time: string
+) => {
+  const cityWeathers = cityWeatherData.filter((item) => item[cityName])[0][
+    cityName
+  ];
 
-  if (currentHour >= 9 && currentHour < 18) {
-    const weather = cityWeatherData.find((entry) => {
-      const dt = new Date(entry.dt * 1000);
-      return dt.getHours() === 9;
-    });
-    return weather;
-  } else if (currentHour >= 18) {
-    const weather = cityWeatherData.find((entry) => {
-      const dt = new Date(entry.dt * 1000);
-      return dt.getHours() === 18;
-    });
-    return weather;
-  } else {
-    const nearestWeather = cityWeatherData.reduce((prev, curr) => {
-      const prevDt = new Date(prev.dt * 1000);
-      const currDt = new Date(curr.dt * 1000);
-      return Math.abs(currDt - new Date()) < Math.abs(prevDt - new Date())
-        ? curr
-        : prev;
-    });
-    return nearestWeather;
-  }
+  const weather = cityWeathers.filter((weather: any) => {
+    const weatherDate = weather.dt_txt;
+    const wantedDate = `${date} ${time}:00:00`;
+    return weatherDate === wantedDate;
+  });
+
+  return weather;
 };
 
 export const RealVideo = (props: RealVideoProps) => {
   const {cityName} = props;
 
-  if (!cityName) {
-    console.error('cityName parametresi gereklidir.');
-    return null;
-  }
-
-  const cityWeatherData = getCityWeatherData(cityName);
-
-  if (!cityWeatherData || cityWeatherData.length === 0) {
-    console.error(
-      `Belirtilen şehir için hava durumu verisi bulunamadı: ${cityName}`
-    );
-    return null;
-  }
-
-  const currentWeather = getCurrentWeather(cityWeatherData);
-  const currentDate = new Date();
-  currentDate.setDate(currentDate.getDate() + 0);
+  const weather = getCurrentWeather(
+    cityName,
+    WeatherData,
+    props.chosenDate,
+    props.chosenTime
+  );
+  const {main, weather: weatherDescription} = weather[0] ?? {};
+  const date = props.chosenDate.split('-');
+  const month = parseInt(date[1], 10) - 1; // TODO: month starts from 0 -> we need to figure out something else
+  const currentDate = new Date(
+    parseInt(date[0], 10),
+    month,
+    parseInt(date[2], 10)
+  );
 
   return (
     <>
@@ -93,8 +85,10 @@ export const RealVideo = (props: RealVideoProps) => {
             <WeatherMetadata cityName={cityName} currentDate={currentDate} />
             <Sunny width={400} height={400} />
             <WeatherStatus
-              temperature={currentWeather.main.temp}
-              description={currentWeather.weather[0].description}
+              temperature={main?.temp}
+              description={
+                weatherDescription && weatherDescription[0].description
+              }
             />
             <Animated
               animations={[
