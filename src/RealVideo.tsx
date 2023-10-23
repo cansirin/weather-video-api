@@ -1,17 +1,19 @@
 import {z} from 'zod';
 import {AbsoluteFill} from 'remotion';
 import {Animated, Fade, Move} from 'remotion-animated';
-import WeatherData from './data/weather.json';
+import Data from './data/weather.json';
 import styles from './styles.module.css';
 import './default.module.css';
 import {WeatherInfo} from './components/WeatherInfo';
 import {Sunny} from './components/weather/Sunny';
 import {WeatherSelector} from './components/weather/WeatherSelector';
 import WeatherMetadata from './WeatherMetadata';
-import {WeatherData as WeatherStatus} from './WeatherData';
+import {Weather} from './Weather';
+import {CityName} from './types/cityName';
+import {getAllDaysWeather} from './utils';
 
 interface RealVideoProps {
-  cityName: string;
+  cityName: CityName;
   chosenTime: string;
   chosenDate: string;
 }
@@ -22,36 +24,18 @@ export const myCompSchema = z.object({
   chosenDate: z.string(),
 });
 
-const getCurrentWeather = (
-  cityName: string,
-  // TODO: add weather interface
-  cityWeatherData: any[],
-  date: string,
-  time: string
-) => {
-  const cityWeathers = cityWeatherData.filter((item) => item[cityName])[0][
-    cityName
-  ];
-
-  const weather = cityWeathers.filter((weather: any) => {
-    const weatherDate = weather.dt_txt;
-    const wantedDate = `${date} ${time}:00:00`;
-    return weatherDate === wantedDate;
-  });
-
-  return weather;
-};
-
 export const RealVideo = (props: RealVideoProps) => {
   const {cityName} = props;
 
-  const weather = getCurrentWeather(
+  // We need to change this function
+  const [today, ...otherDays] = getAllDaysWeather(
+    Data,
     cityName,
-    WeatherData,
-    props.chosenDate,
     props.chosenTime
   );
-  const {main, weather: weatherDescription} = weather[0] ?? {};
+
+  const {main, weather: weatherDescription} = today ?? {};
+
   const date = props.chosenDate.split('-');
   const month = parseInt(date[1], 10) - 1; // TODO: month starts from 0 -> we need to figure out something else
   const currentDate = new Date(
@@ -84,11 +68,9 @@ export const RealVideo = (props: RealVideoProps) => {
           >
             <WeatherMetadata cityName={cityName} currentDate={currentDate} />
             <Sunny width={400} height={400} />
-            <WeatherStatus
+            <Weather
               temperature={main?.temp}
-              description={
-                weatherDescription && weatherDescription[0].description
-              }
+              description={weatherDescription && weatherDescription.description}
             />
             <Animated
               animations={[

@@ -5,6 +5,7 @@ import {RealVideo, myCompSchema} from './RealVideo';
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
+  const now = new Date();
   return (
     <>
       <Composition
@@ -20,9 +21,10 @@ export const RemotionRoot: React.FC = () => {
         // https://www.remotion.dev/docs/parametrized-rendering
         schema={myCompSchema}
         defaultProps={{
-          cityName: 'Bayburt',
+          cityName: 'bayburt',
           chosenTime: '09',
-          chosenDate: '2023-10-18',
+          // ChosenDate: '2023-10-24',
+          chosenDate: now.toISOString().split('T')[0],
         }}
       />
       {/* Mount any React component to make it show up in the sidebar and work on it individually! */}

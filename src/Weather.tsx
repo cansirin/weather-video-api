@@ -6,7 +6,7 @@ interface WeatherDataProps {
   description: string;
 }
 
-export const WeatherData: React.FC<WeatherDataProps> = ({
+export const Weather: React.FC<WeatherDataProps> = ({
   temperature,
   description,
 }) => {

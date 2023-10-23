@@ -1,5 +1,5 @@
 import {AbsoluteFill} from 'remotion';
-import {useTranslate} from '../utils';
+import {useTranslate} from '../hooks/useTranslate';
 
 export const WeatherRow = ({rowNumber}: {rowNumber: number}) => {
   const moveDown = useTranslate({
